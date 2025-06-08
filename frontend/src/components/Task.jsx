@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import baseurl from '../utils/api';
 
 const Task = ({ task, listId, setLists, lists }) => {
  
@@ -17,7 +18,7 @@ const Task = ({ task, listId, setLists, lists }) => {
  
   const markTaskCompleted = async () => {
     try {
-      await axios.put('http://localhost:5000/task/task/complete', {
+      await axios.put(`${baseurl}/task/task/complete`, {
         taskId: task._id,
       });
       setLists(

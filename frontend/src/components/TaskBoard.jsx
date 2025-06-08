@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TaskList from './TaskList';
 import { useNavigate } from 'react-router-dom';
+import baseurl from '../utils/api';
 
 const TaskBoard = () => {
   const [lists, setLists] = useState([]);
@@ -17,7 +18,7 @@ const TaskBoard = () => {
  
   const loadLists = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/list/lists');
+      const response = await axios.get(`${baseurl}/list/lists`);
       setLists(response.data);
     } catch (error) {
       console.error('Error loading lists:', error);
@@ -33,7 +34,7 @@ const TaskBoard = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/list/list/create', {
+      const response = await axios.post(`${baseurl}/list/list/create`, {
         title: newListTitle,
       });
       setLists([...lists, { ...response.data, tasks: [] }]);

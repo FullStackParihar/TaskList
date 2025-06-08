@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
+import baseurl from '../utils/api';
 
 const VerifyOtp = () => {
   const [otp, setOtp] = useState('');
@@ -12,7 +13,7 @@ const VerifyOtp = () => {
   const handleVerifyOtp = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/user/verifyotp', {
+      const response = await axios.post(`${baseurl}/user/verifyotp`, {
         email,
         otp,
       });

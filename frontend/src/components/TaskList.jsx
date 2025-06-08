@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Task from './Task';
+import baseurl from '../utils/api';
 
 const TaskList = ({ list, setLists, lists }) => {
   const [newTaskTitle, setNewTaskTitle] = useState('');
@@ -13,7 +14,7 @@ const TaskList = ({ list, setLists, lists }) => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/task/task/create', {
+      const response = await axios.post(`${baseurl}/task/task/create`, {
         listId: list._id,
         title: newTaskTitle,
       });
@@ -40,7 +41,7 @@ const TaskList = ({ list, setLists, lists }) => {
     if (sourceListId === list._id) return;
 
     try {
-      const response = await axios.put('http://localhost:5000/task/task/move', {
+      const response = await axios.put(`${baseurl}/task/task/move`, {
         taskId,
         newListId: list._id,
       });
