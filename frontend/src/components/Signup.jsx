@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import baseurl from '../utils/api';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/user/signup', formData);
+      const response = await axios.post(`${baseurl}/user/signup`, formData);
       navigate('/verify-otp', { state: { email: formData.email } });
     } catch (err) {
       setError(err.response?.data?.message || 'Signup failed');
