@@ -408,7 +408,7 @@ const TaskList = ({ list, setLists, lists }) => {
         </div>
 
         {/* Task statistics */}
-        <div className="flex items-center justify-between text-sm text-gray-500">
+        {/* <div className="flex items-center justify-between text-sm text-gray-500">
           <span>{taskStats.total} {taskStats.total === 1 ? 'task' : 'tasks'}</span>
           <div className="flex space-x-2">
             {taskStats.byPriority.high && (
@@ -427,7 +427,7 @@ const TaskList = ({ list, setLists, lists }) => {
               </span>
             )}
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Error message */}
