@@ -497,16 +497,16 @@ const TaskList = ({ list, setLists, lists }) => {
               autoFocus
             />
             
-            <textarea
+            {/* <textarea
               className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 resize-none"
               placeholder="Description (optional)..."
               value={newTaskDescription}
               onChange={(e) => setNewTaskDescription(e.target.value)}
               rows={2}
               maxLength={200}
-            />
+            /> */}
 
-            <select
+            {/* <select
               className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
               value={newTaskPriority}
               onChange={(e) => setNewTaskPriority(e.target.value)}
@@ -514,7 +514,7 @@ const TaskList = ({ list, setLists, lists }) => {
               <option value="low">Low Priority</option>
               <option value="medium">Medium Priority</option>
               <option value="high">High Priority</option>
-            </select>
+            </select> */}
 
             <div className="flex space-x-2">
               <button
