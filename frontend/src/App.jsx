@@ -15,7 +15,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/verify-otp" element={<VerifyOtp />} />
           <Route
-            path="/"
+            path="/" 
             element={
               <ProtectedRoute>
                 <TaskBoard />
