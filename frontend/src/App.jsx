@@ -1,14 +1,4 @@
-// import TaskBoard from './components/TaskBoard';
-
-// function App() {
-//   return (
-//     <div className="min-h-screen bg-gray-100">
-//       <TaskBoard />
-//     </div>
-//   );
-// }
-
-// export default App;
+ 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TaskBoard from './components/TaskBoard';
 import Login from './components/Login';
